@@ -147,12 +147,12 @@ export const chains: supported_chains = {
         validators: [{
             name: "Chemical Bros",
             logo: "obi",
-            delegate_url: "https://sei.explorers.guru/validator/seivaloper1hgateul87eemqyvcjszlkdxm8welsf5v07cukp"
+            delegate_url: "https://wallet.keplr.app/chains/osmosis?modal=validator&chain=osmosis-1&validator_address=osmovaloper14ts0j42qkpr43a3tgxr7zz6l6zdf7hdes5jpma"
         },
             {
                 name: "PFC",
                 logo: "pfc",
-                delegate_url: "https://sei.explorers.guru/validator/seivaloper1w48csxj6xrhs99wz4uhys6ukdkegcn8haq9xpw"
+                delegate_url: "https://wallet.keplr.app/chains/stride?modal=validator&chain=stride-1&validator_address=stridevaloper1670dvuv348eynr9lsmdrhqu3g7vpmzx92tuvq6"
             }
         ]
     }
