@@ -129,6 +129,32 @@ export const chains: supported_chains = {
                 delegate_url: "https://sei.explorers.guru/validator/seivaloper1w48csxj6xrhs99wz4uhys6ukdkegcn8haq9xpw"
             }
         ]
+    },
+    "stars-testnet": {
+        denom: "ustars",
+        rpc: "https://rpc.elgafar-1.stargaze-apis.com:443",
+        api: "https://rest.elgafar-1.stargaze-apis.com/",
+        chain: "elgafar-1",
+        name: "STARZ Testnet",
+        steak: "stars15wdut776euk6qx6qxujxcg83xj3mp7zwlkysvr44hmhnvay63scq9ufvgq",
+        multiquery: "juno1q49nd5wyecxc64hmuqr3ax3get0pt337frwjqg0lxx5lagv3vfgsa5quh0",
+        multicall: "juno1l7vrwvhvfea0wd2ch4qs9u0vrqr0pynxddft70kw0dgjuj0tzvys73hnuc",
+        hub: "stars1v4eyxvg8ykrp8p2a55pszjsc7get67pw63vvaku6nrgpdwnwy6uqadvsxh",
+        tx_explorer: "https://testnet-explorer.publicawesome.dev/stargaze/tx/",
+        validator_explorer: "https://testnet-explorer.publicawesome.dev/stargaze/staking/",
+        contract_explorer: "https://testnet-explorer.publicawesome.dev/stargaze/account/",
+        gas_price: "0.04usei",
+        validators: [{
+            name: "Chemical Bros",
+            logo: "obi",
+            delegate_url: "https://sei.explorers.guru/validator/seivaloper1hgateul87eemqyvcjszlkdxm8welsf5v07cukp"
+        },
+            {
+                name: "PFC",
+                logo: "pfc",
+                delegate_url: "https://sei.explorers.guru/validator/seivaloper1w48csxj6xrhs99wz4uhys6ukdkegcn8haq9xpw"
+            }
+        ]
     }
 };
 

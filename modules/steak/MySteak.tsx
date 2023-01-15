@@ -48,8 +48,10 @@ const MySteak: FC<SteakProps> = ({ network,chain,client}) => {
 
   return (
     <>
+      {network.chain == "juno-1" && (
       <Box color='white' bg='red'>Steak is closing down.. this site will stay up for people to unstake their tokens</Box>
-      <Header text="My Steak">
+          )}
+        <Header text="My Steak">
         {chain === "LUNA" && <TerraMySteak network={network}  chain={chain} client={client} /> }
         {chain === "juno" && <JunoMySteak network={network} chain={chain} client={client} /> }
 
@@ -67,10 +69,11 @@ const MySteak: FC<SteakProps> = ({ network,chain,client}) => {
           STEAK balance in wallet
         </Text>
         <Flex direction={["column", "row", null, null]} justify="center" mt="10">
-          {/*}   <NextLink href="/#" passHref aria-disabled={true} >
+          {network.chain != "juno-1" && (
+              <NextLink href="/bond" passHref aria-disabled={true} >
             <chakra.a {...bondOrUnbondStyle}>Stake {convertFromMicroDenom(network.denom)}</chakra.a>
           </NextLink>
-          */}
+          ) }
           <NextLink href="/unbond" passHref>
             <chakra.a {...bondOrUnbondStyle}>Unstake STEAK</chakra.a>
           </NextLink>
