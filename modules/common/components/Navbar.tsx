@@ -4,7 +4,7 @@ import {Flex, Box, HStack, Text, chakra} from "@chakra-ui/react";
 import {CosmosWallet} from "./CosmosWallet";
 import SteakIcon from "modules/steak/SteakIcon";
 import {SteakProps} from "../../../pages/_app";
-import NextLink from "next/link";
+import Link from "next/link";
 //import {chains} from "modules/constants";
 
 interface NavbarProps extends SteakProps {
@@ -42,15 +42,15 @@ export function Navbar({
         >
             <Box flex="1">
                 <HStack flex="1" spacing="6" justify="flex" key="logo">
-                    <NextLink href={"/"} passHref={true}>
+                    <Link href={"/"} passHref={true}>
                         <chakra.a><SteakIcon w={["3rem", "4rem"]} h={["3rem", "4rem"]}/></chakra.a>
-                    </NextLink>
-                    <NextLink href={"/"} passHref={true}>
+                    </Link>
+                    <Link href={"/"} passHref={true}>
                         <chakra.a><Text color={"brand.white"}>{network.name}</Text></chakra.a>
-                    </NextLink>
-                    <NextLink href={"/stats"} passHref={true}>
+                    </Link>
+                    <Link href={"/stats"} passHref={true}>
                         <chakra.a><Text color={"brand.white"}>About</Text></chakra.a>
-                    </NextLink>
+                    </Link>
 
                 </HStack>
             </Box>
