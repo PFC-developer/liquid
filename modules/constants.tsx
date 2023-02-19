@@ -155,6 +155,28 @@ export const chains: supported_chains = {
                 delegate_url: "https://wallet.keplr.app/chains/stride?modal=validator&chain=stride-1&validator_address=stridevaloper1670dvuv348eynr9lsmdrhqu3g7vpmzx92tuvq6"
             }
         ]
+    },
+    "whitewhale-testnet": {
+        denom: "uwhale",
+        rpc: "https://narwhal-rpc.dalnim.finance:443",
+        api: "https://narwhal-api.dalnim.finance/",
+        chain: "narwhal-1",
+        name: "WHALE Testnet",
+        steak: "migaloo179e90rqspswfzmhdl25tg22he0fcefwndgzc957ncx9dleduu7ms4acnxg",
+        multiquery: "juno1q49nd5wyecxc64hmuqr3ax3get0pt337frwjqg0lxx5lagv3vfgsa5quh0",
+        multicall: "juno1l7vrwvhvfea0wd2ch4qs9u0vrqr0pynxddft70kw0dgjuj0tzvys73hnuc",
+        hub: "migaloo1k8pms0ywhsa0kjvkxqx434atqd5dh6w54k0gr8j45ra36q02py5s78wcwe",
+        tx_explorer: "https://testnet-explorer.publicawesome.dev/stargaze/tx/",
+        validator_explorer: "https://testnet-explorer.publicawesome.dev/stargaze/staking/",
+        contract_explorer: "https://testnet-explorer.publicawesome.dev/stargaze/account/",
+        gas_price: "0.04usei",
+        validators: [
+            {
+                name: "PFC",
+                logo: "pfc",
+                delegate_url: "https://wallet.keplr.app/chains/stride?modal=validator&chain=stride-1&validator_address=stridevaloper1670dvuv348eynr9lsmdrhqu3g7vpmzx92tuvq6"
+            }
+        ]
     }
 };
 
