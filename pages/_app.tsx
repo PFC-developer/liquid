@@ -26,12 +26,23 @@ interface HostProps extends AppProps {
 }
 
 const MyApp = ({Component, pageProps, host, defaultChain}: HostProps) => {
-
-    console.log("host/chain", host, defaultChain);
+    let hostname = host;
+    let chainname = defaultChain
+    if (typeof localStorage != 'undefined') {
+        console.log('localstorage')
+        if (host == "no host") {
+            hostname = localStorage.getItem("host") || "no host"
+            chainname = localStorage.getItem("chain") || defaultChain
+        } else {
+            localStorage.setItem("host",hostname)
+            localStorage.setItem("chain",chainname)
+        }
+    }
+    console.log("host/chain", hostname, chainname);
     // You can also provide a custom RPC endpoint
 
-    const [chain, setChain] = useState<string>(defaultChain);
-    const [network, setNetwork] = useState<chain_details>(chainDetails(defaultChain));
+    const [chain, setChain] = useState<string>(chainname);
+    const [network, setNetwork] = useState<chain_details>(chainDetails(chainname));
     GasPrice;
 
 
@@ -39,16 +50,18 @@ const MyApp = ({Component, pageProps, host, defaultChain}: HostProps) => {
         if (chain) {
             setNetwork(chainDetails(chain));
         } else {
-            setNetwork(chainDetails(defaultChain));
+            setNetwork(chainDetails(chainname));
         }
-    }, [chain, defaultChain]);
+    }, [chain, chainname,hostname]);
+
     // console.log("chain=",chain);
     // console.log("network=",network);
     const endpoint = useMemo(() => {
         //  console.log("in endpoint", chain);
         return chains[chain].rpc;
     }, [chain]);
-    const chainId = useMemo(() => network.chain, [chain, network]);
+    
+    const chainId = useMemo(() => network.chain, [chainname, network]);
     const wallets = useMemo(
         () => {
             return [new KeplrWalletAdapter({
@@ -128,10 +141,12 @@ MyApp.getInitialProps = async ({ctx}: { ctx: NextPageContext; }) => {
         console.log('no ctx.req', ctx)
     }
     if (typeof localStorage != 'undefined') {
+        console.log('localstorage')
         const host = localStorage.getItem("host") || "no host"
         const chain = localStorage.getItem("chain") || DEFAULTCHAIN
         return {host: host, defaultChain: chain};
     } else {
+        console.log('no localstorage')
         return {host:"no host", defaultChain:DEFAULTCHAIN}
     }
 }
