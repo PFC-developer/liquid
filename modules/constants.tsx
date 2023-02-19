@@ -174,7 +174,29 @@ export const chains: supported_chains = {
             {
                 name: "PFC",
                 logo: "pfc",
-                delegate_url: "https://wallet.keplr.app/chains/stride?modal=validator&chain=stride-1&validator_address=stridevaloper1670dvuv348eynr9lsmdrhqu3g7vpmzx92tuvq6"
+                delegate_url: "https://cosmosrun.info/whitewhale/staking/migaloovaloper1670dvuv348eynr9lsmdrhqu3g7vpmzx94s460k"
+            }
+        ]
+    },
+    "whitewhale": {
+        denom: "uwhale",
+        rpc: "https://migaloo-rpc.dalnim.finance:443",
+        api: "https://migaloo-api.dalnim.finance/",
+        chain: "migaloo-1",
+        name: "White Whale",
+        steak: "migaloo17p9rzwnnfxcjp32un9ug7yhhzgtkhvl9jfksztgw5uh69wac2pgsqfhjvq",
+        multiquery: "juno1q49nd5wyecxc64hmuqr3ax3get0pt337frwjqg0lxx5lagv3vfgsa5quh0",
+        multicall: "juno1l7vrwvhvfea0wd2ch4qs9u0vrqr0pynxddft70kw0dgjuj0tzvys73hnuc",
+        hub: "migaloo1wkwy0xh89ksdgj9hr347dyd2dw7zesmtrue6kfzyml4vdtz6e5wsaqt5j4",
+        tx_explorer: "https://cosmosrun.info/whitewhale/tx/",
+        validator_explorer: "https://cosmosrun.info/whitewhale/staking/",
+        contract_explorer: "https://cosmosrun.info/whitewhale/account/",
+        gas_price: "0.04usei",
+        validators: [
+            {
+                name: "PFC",
+                logo: "pfc",
+                delegate_url: "https://cosmosrun.info/whitewhale/staking/migaloovaloper1670dvuv348eynr9lsmdrhqu3g7vpmzx94s460k"
             }
         ]
     }
