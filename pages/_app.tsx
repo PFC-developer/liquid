@@ -39,7 +39,7 @@ const MyApp = ({Component, pageProps, host, defaultChain}: HostProps) => {
         } else {
             setNetwork(chainDetails(defaultChain));
         }
-    }, [chain]);
+    }, [chain,defaultChain]);
     // console.log("chain=",chain);
     // console.log("network=",network);
     const endpoint = useMemo(() => {
