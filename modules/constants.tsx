@@ -119,7 +119,7 @@ export const chains: supported_chains = {
         contract_explorer: "https://sei.explorers.guru/account/",
         gas_price: "0.04usei",
         validators: [{
-            name: "Chemical Bros",
+            name: "Obi",
             logo: "obi",
             delegate_url: "https://sei.explorers.guru/validator/seivaloper1hgateul87eemqyvcjszlkdxm8welsf5v07cukp"
         },
@@ -145,7 +145,7 @@ export const chains: supported_chains = {
         contract_explorer: "https://testnet-explorer.publicawesome.dev/stargaze/account/",
         gas_price: "0.04usei",
         validators: [{
-            name: "Chemical Bros",
+            name: "Obi",
             logo: "obi",
             delegate_url: "https://wallet.keplr.app/chains/osmosis?modal=validator&chain=osmosis-1&validator_address=osmovaloper14ts0j42qkpr43a3tgxr7zz6l6zdf7hdes5jpma"
         },
