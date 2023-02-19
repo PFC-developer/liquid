@@ -14,7 +14,9 @@ export default function BondPage({network, chain}: SteakProps) {
             <Head>
                 <title>Steak | Bond</title>
             </Head>
+            {network.chain == "juno-1" && (
             <p>Bonding is suspended</p>
+            )}
 
             {network.chain != "juno-1" && (
                 <BondForm chain={chain} network={network} client={client}/>
