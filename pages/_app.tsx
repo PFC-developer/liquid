@@ -107,7 +107,11 @@ MyApp.getInitialProps = async ({ctx}: { ctx: NextPageContext; }) => {
                 return {host: host, defaultChain: chain};
             }
             return {host: host, defaultChain: DEFAULTCHAIN};
+        } else {
+            console.log('no host header', ctx.req)
         }
+    } else {
+        console.log('no ctx.req',ctx)
     }
     return {host: "no host", defaultChain: DEFAULTCHAIN};
 }
