@@ -38,7 +38,7 @@ const MyApp = ({Component, pageProps, host, defaultChain}: HostProps) => {
             localStorage.setItem("chain",chainname)
         }
     }
-    console.log("host/chain", hostname, chainname);
+    console.log("host/chain", hostname, chainname,defaultChain);
     // You can also provide a custom RPC endpoint
 
     const [chain, setChain] = useState<string>(chainname);
@@ -54,14 +54,15 @@ const MyApp = ({Component, pageProps, host, defaultChain}: HostProps) => {
         }
     }, [chain, chainname,hostname]);
 
-    // console.log("chain=",chain);
+
     // console.log("network=",network);
     const endpoint = useMemo(() => {
         //  console.log("in endpoint", chain);
         return chains[chain].rpc;
     }, [chain]);
-    
-    const chainId = useMemo(() => network.chain, [chainname, network]);
+
+    const chainId = useMemo(() => network.chain, [chain, network]);
+   // console.log("chain=",chain,chainname,chainId);
     const wallets = useMemo(
         () => {
             return [new KeplrWalletAdapter({
