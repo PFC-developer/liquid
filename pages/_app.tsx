@@ -112,7 +112,7 @@ MyApp.getInitialProps = async ({ctx}: { ctx: NextPageContext; }) => {
             const dotPosn = host.indexOf(".");
             if (dotPosn >= 0) {
                 const chain = host.substring(0, dotPosn);
-                if (localStorage) {
+                if (typeof localStorage != 'undefined') {
                     localStorage.setItem("chain", chain)
                 }
                 return {host: host, defaultChain: chain};
