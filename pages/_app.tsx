@@ -7,7 +7,7 @@ import {CWClientProvider, WalletModalProvider, WalletProvider} from "@wizard-ui/
 import "d3-format";
 import {Layout} from "modules/common";
 import theme from "../theme";
-import {chain_details, chains, chainDetails} from "modules/constants";
+import {chain_details, chainDetails, chains} from "modules/constants";
 import {CosmWasmClient} from "@cosmjs/cosmwasm-stargate";
 import {GasPrice} from "@cosmjs/stargate";
 import {NextPageContext} from "next";
@@ -27,11 +27,13 @@ interface HostProps extends AppProps {
 
 const MyApp = ({Component, pageProps, host, defaultChain}: HostProps) => {
 
-    console.log("host/chain", host,defaultChain);
+    console.log("host/chain", host, defaultChain);
     // You can also provide a custom RPC endpoint
+
     const [chain, setChain] = useState<string>(defaultChain);
     const [network, setNetwork] = useState<chain_details>(chainDetails(defaultChain));
     GasPrice;
+
 
     useEffect(() => {
         if (chain) {
@@ -39,7 +41,7 @@ const MyApp = ({Component, pageProps, host, defaultChain}: HostProps) => {
         } else {
             setNetwork(chainDetails(defaultChain));
         }
-    }, [chain,defaultChain]);
+    }, [chain, defaultChain]);
     // console.log("chain=",chain);
     // console.log("network=",network);
     const endpoint = useMemo(() => {
@@ -97,22 +99,40 @@ MyApp.getInitialProps = async ({ctx}: { ctx: NextPageContext; }) => {
     if (ctx.req) {
         const host = ctx.req.headers.host // will give you localhost:3000
         if (host) {
+            if (typeof localStorage != 'undefined') {
+                localStorage.setItem("host", host)
+            }
             console.log('host=', host);
             if (host.includes("vercel") || host.includes("localhost")) {
+                if (typeof localStorage != 'undefined') {
+                    localStorage.setItem("chain", DEFAULTCHAIN)
+                }
                 return {host, defaultChain: DEFAULTCHAIN};
             }
             const dotPosn = host.indexOf(".");
             if (dotPosn >= 0) {
                 const chain = host.substring(0, dotPosn);
+                if (localStorage) {
+                    localStorage.setItem("chain", chain)
+                }
                 return {host: host, defaultChain: chain};
+            }
+            if (typeof localStorage != 'undefined') {
+                localStorage.setItem("chain", DEFAULTCHAIN)
             }
             return {host: host, defaultChain: DEFAULTCHAIN};
         } else {
             console.log('no host header', ctx.req)
         }
     } else {
-        console.log('no ctx.req',ctx)
+        console.log('no ctx.req', ctx)
     }
-    return {host: "no host", defaultChain: DEFAULTCHAIN};
+    if (typeof localStorage != 'undefined') {
+        const host = localStorage.getItem("host") || "no host"
+        const chain = localStorage.getItem("chain") || DEFAULTCHAIN
+        return {host: host, defaultChain: chain};
+    } else {
+        return {host:"no host", defaultChain:DEFAULTCHAIN}
+    }
 }
 export default MyApp;
