@@ -191,12 +191,34 @@ export const chains: supported_chains = {
         tx_explorer: "https://cosmosrun.info/whitewhale/tx/",
         validator_explorer: "https://cosmosrun.info/whitewhale/staking/",
         contract_explorer: "https://cosmosrun.info/whitewhale/account/",
-        gas_price: "0.04usei",
+        gas_price: "0uwhale",
         validators: [
             {
                 name: "PFC",
                 logo: "pfc",
                 delegate_url: "https://cosmosrun.info/whitewhale/staking/migaloovaloper1670dvuv348eynr9lsmdrhqu3g7vpmzx94s460k"
+            }
+        ]
+    },
+    "chihuahua": {
+        denom: "uhuahua",
+        rpc: "https://chihuahua-rpc.dalnim.finance:443",
+        api: "https://chihuahua-api.dalnim.finance/",
+        chain: "chihuahua-1",
+        name: "Chihuahua",
+        steak: "chihuahua1jz5n4aynhpxx7clf2m8hrv9dp5nz83k67fgaxhy4p9dfwl6zssrq3ymr6w",
+        multiquery: "juno1q49nd5wyecxc64hmuqr3ax3get0pt337frwjqg0lxx5lagv3vfgsa5quh0",
+        multicall: "juno1l7vrwvhvfea0wd2ch4qs9u0vrqr0pynxddft70kw0dgjuj0tzvys73hnuc",
+        hub: "chihuahua1psf89r2g9vdlttrjphspcpzzfx87r2r4nl5fg703ky42mp2706wsw5330f",
+        tx_explorer: "https://ping.pub/chihuahua/tx/",
+        validator_explorer: "https://ping.pub/chihuahua/staking/",
+        contract_explorer: "https://ping.pub/chihuahua/account/",
+        gas_price: "1uhuahua",
+        validators: [
+            {
+                name: "PFC",
+                logo: "pfc",
+                delegate_url: "https://ping.pub/chihuahua/staking/chihuahuavaloper1670dvuv348eynr9lsmdrhqu3g7vpmzx96h4l2d"
             }
         ]
     }
